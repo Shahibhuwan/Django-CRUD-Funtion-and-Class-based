@@ -1,0 +1,14 @@
+<!--<ul>
+{%for student in object_list%}
+<li>{{student.name}}
+</li>
+{%endfor%}
+</ul>-->
+<ul>
+{% for student in Students%}
+<li>{{student.name}}
+{{student.email}}
+{{student.password}}
+
+{% endfor %}
+</ul>
