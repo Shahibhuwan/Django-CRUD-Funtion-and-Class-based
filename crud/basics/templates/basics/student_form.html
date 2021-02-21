@@ -1,4 +1,9 @@
-<form method="POST" enctype="multipart/form-data">
+{%extends 'basics/base.html'%}
+{%block content%}
+<div class="row">
+<div class="col-sm-4">
+<h2 class="text-center alert alert-info">Add New Student</h2>
+<form action="" method="POST" enctype="multipart/form-data">
 
     <!-- Security token -->
     {% csrf_token %}
@@ -6,5 +11,8 @@
     <!-- Using the formset -->
     {{ form.as_p }}
 
-    <input type="submit" value="Submit">
+    <input type="submit" class="btn btn-success" value="Add">
 </form>
+</div>
+</div>
+{% endblock %}

@@ -1,14 +1,44 @@
+{%extends 'basics/base.html'%}
 <!--<ul>
 {%for student in object_list%}
 <li>{{student.name}}
 </li>
 {%endfor%}
 </ul>-->
-<ul>
-{% for student in Students%}
-<li>{{student.name}}
-{{student.email}}
-{{student.password}}
 
-{% endfor %}
-</ul>
+{%block content%}
+<div class="col-sm-8">
+<h4 class="text=-center alert alert-info"> Show Student Information</h4>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Password</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  {%for student in Students%}
+    <tr>
+      <th scope="row">{{student.id}}</th>
+      <td>{{student.name}}</td>
+      <td>{{student.email}}</td>
+      <td>{{student.password}}</td>
+      <td><a href="{%url 'Update' student.id%}"   class="btn btn-warning btn-sm">Edit</a>
+          <a href="{%url 'Delete' student.id%}"   class="btn btn-danger btn-sm">Delete</a>
+      </td>
+
+    </tr>
+    {%endfor%}
+  
+  </tbody>
+</table>
+
+
+</div>
+
+
+{% endblock %}

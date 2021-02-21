@@ -9,6 +9,8 @@
 -->
 
 <!-- FUNCTIONBASEDTEMPLATE-->
+{%extends 'basics/base.html'%}
+{% block content%}
 <ul>
 <li> {{stud.name}}
 </li>
@@ -17,3 +19,4 @@
 <li> {{stud.password}}
 </li>
 </ul>
+{{% endblock %}}
